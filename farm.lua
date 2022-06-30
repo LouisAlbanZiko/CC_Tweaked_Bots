@@ -169,9 +169,11 @@ function farm(crop_name, nr_of_rounds)
 				return
 			end
 			farm_round()
-			print(string.format("Waiting for %d seconds...", SLEEP_TIME_SEC))
-			os.sleep(SLEEP_TIME_SEC)
-			print("Done.")
+			if i ~= nr_of_rounds then
+				print(string.format("Waiting for %d seconds...", SLEEP_TIME_SEC))
+				os.sleep(SLEEP_TIME_SEC)
+				print("Done.")
+			end
 		end
 		print("Exiting.")
 	end
